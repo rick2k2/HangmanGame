@@ -1,0 +1,221 @@
+/* 🌟 RESET & DEFAULTS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+  min-height: 100vh;
+}
+
+body.wrong-flash {
+  background-color: red !important;
+}
+
+body.correct-flash {
+  background-color: green !important;
+}
+
+/* 🌟 MAIN CONTAINER */
+.container {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  background: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* 🌟 HEADINGS & TEXT */
+.container h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* 🌟 HANGMAN IMAGE */
+.hangman-container img {
+  width: 200px;
+  margin: 10px 0;
+  max-width: 100%;
+}
+
+/* 🌟 WORD DISPLAY */
+#word {
+  font-size: 24px;
+  letter-spacing: 5px;
+  margin: 20px 0;
+  word-wrap: break-word;
+}
+
+/* 🌟 KEYBOARD */
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.keyboard button {
+  padding: 10px;
+  font-size: 18px;
+  background: #ff6600;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  min-width: 40px;
+}
+
+.keyboard button:hover {
+  background: #e65c00;
+}
+
+.keyboard button.wrong {
+  background: red;
+  border-color: darkred;
+}
+
+.keyboard button.correct {
+  background: green !important;
+  border-color: darkgreen;
+}
+
+/* 🌟 GAME INFO */
+#lives {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+#message {
+  font-size: 22px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* 🌟 BUTTONS */
+.buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#new-game {
+  background: #007bff;
+}
+
+#restart-game {
+  background: #ffaa00;
+}
+
+#quit-game {
+  background: #ff3333;
+}
+
+#play-again {
+  background: #00cc66;
+}
+
+.buttons button:hover {
+  opacity: 0.8;
+}
+
+/* 🌟 DEV CAPTION */
+.dev_caption {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* 🌟 MOBILE RESPONSIVE DESIGN */
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  .container h1 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  #word {
+    font-size: 20px;
+    letter-spacing: 3px;
+  }
+
+  .keyboard {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+  }
+
+  .keyboard button {
+    font-size: 16px;
+    padding: 8px;
+    min-width: 35px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .buttons button {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+/* 🌟 SMALLER DEVICES */
+@media screen and (max-width: 400px) {
+  .keyboard {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+  }
+
+  .keyboard button {
+    font-size: 14px;
+    padding: 7px;
+    min-width: 30px;
+  }
+
+  #word {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  .hangman-container img {
+    width: 150px;
+  }
+}
